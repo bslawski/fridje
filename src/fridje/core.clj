@@ -1,4 +1,5 @@
 (ns fridje.core
+  (:require [fridje.sqlite :as sqlite])
   (:gen-class))
 
 (defn -main

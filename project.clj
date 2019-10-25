@@ -2,7 +2,12 @@
   :description "An easy-to-install message server"
   :license {:name "MIT Public License"
             :url "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.8.0"]]
-  :main ^:skip-aot fridje.core
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [clojure.jdbc/clojure.jdbc-c3p0 "0.3.3"]
+                 [honeysql "0.9.8"]
+                 [org.clojure/java.jdbc "0.7.8"]
+                 [org.xerial/sqlite-jdbc "3.23.1"]]
+  :main fridje.core
+  :aot :all
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

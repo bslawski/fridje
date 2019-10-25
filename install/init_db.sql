@@ -7,6 +7,8 @@ CREATE TABLE IF NOT EXISTS people (
 
 CREATE TABLE IF NOT EXISTS messages (
   id VARCHAR(16) PRIMARY KEY,
+  sender VARCHAR(16),
+  recipient VARCHAR(16),
   sent_at TIMESTAMP,
   received_at TIMESTAMP,
   message TEXT
