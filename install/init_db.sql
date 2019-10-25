@@ -11,5 +11,5 @@ CREATE TABLE IF NOT EXISTS messages (
   recipient VARCHAR(16),
   sent_at TIMESTAMP,
   received_at TIMESTAMP,
-  message TEXT
+  payload TEXT
 );

@@ -1,6 +1,12 @@
 (ns fridje.config)
 
-(def db-file
+
+(defmulti env-var
+  (fn [var-name]
+    (keyword var-name)))
+
+(defmethod env-var :db-file
+  [_]
   (or
     (System/getenv "DB_FILE")
     "fridje.db"))

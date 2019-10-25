@@ -1,5 +1,5 @@
 (ns fridje.core
-  (:require [fridje.sqlite :as sqlite])
+  (:require [fridje.message :as message])
   (:gen-class))
 
 (defn -main
