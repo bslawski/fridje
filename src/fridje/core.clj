@@ -1,5 +1,5 @@
 (ns fridje.core
-  (:require [fridje.message :as message])
+  (:require [fridje.person :as person])
   (:gen-class))
 
 (defn -main

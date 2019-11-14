@@ -4,6 +4,8 @@
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [clojure.jdbc/clojure.jdbc-c3p0 "0.3.3"]
+                 [com.taoensso/nippy "2.14.0"]
+                 [crypto-password "0.2.1"]
                  [honeysql "0.9.8"]
                  [org.clojure/core.async "0.4.500"]
                  [org.clojure/java.jdbc "0.7.8"]
