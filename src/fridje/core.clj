@@ -1,9 +1,8 @@
 (ns fridje.core
-  (:require [fridje.person :as person])
+  (:require [fridje.api :as api])
   (:gen-class))
 
 (defn -main
   "Runs the message server"
   [& args]
-  ;; TODO
-)
+  (api/run-server 8080))

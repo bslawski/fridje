@@ -24,14 +24,14 @@
     (config/env-var :default-facade)))
 
 
-(defn register-person
-  [title password & [facade]]
+(defn register
+  [title password]
   (let [person {:id (util/random-alphanumeric 16)
                 :title title
                 :password (bcrypt/encrypt password)
-                :facade (or facade (load-default-facade))}]
+                :facade (load-default-facade)}]
     (save-person person)
-    person))
+    (dissoc person :facade :password)))
 
 
 (defn update-facade
@@ -46,9 +46,21 @@
   (first
     (sqlite/query
       (->
-        (hsql/select [:id :title :facade])
+        (hsql/select [:id :title])
         (hsql/from :people)
         (hsql/where [:id id])))))
+
+
+(defn get-facade
+  [id]
+  (:facade
+    (first
+      (sqlite/query
+        (->
+          (hsql/select [:facade])
+          (hsql/from :people)
+          (hsql/where [:id id]))))))
+
 
 (defn check-login
   [title password]
